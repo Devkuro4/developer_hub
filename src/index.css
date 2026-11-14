@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+html { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; }
+/* Readability: the original UI used very small text almost everywhere */
+.hub-root .text-xs { font-size: 0.8125rem; line-height: 1.35rem; }
+.hub-root .text-\[11px\] { font-size: 0.75rem; }
+.hub-root button, .hub-root a { -webkit-tap-highlight-color: transparent; }
+.hub-root :focus-visible { outline: 2px solid #818cf8; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .hub-root * { animation: none !important; transition: none !important; } }
+
+/* ---- Readability pass: bigger text, calmer labels ---- */
+.hub-root { font-size: 16px; line-height: 1.55; }
+.hub-root .text-sm { font-size: 0.9375rem; line-height: 1.5rem; }
+.hub-root .text-xs { font-size: 0.875rem; line-height: 1.4rem; }
+.hub-root .text-\[11px\] { font-size: 0.8125rem; line-height: 1.25rem; }
+.hub-root .text-\[10px\] { font-size: 0.75rem; }
+.hub-root .uppercase { text-transform: none; }
+.hub-root .tracking-wider { letter-spacing: 0; }
+.hub-root .opacity-60 { opacity: 0.75; }
+
+/* ---- Admin site: teal instead of indigo so it never looks like the member site ---- */
+.admin-theme {
+  --color-indigo-50: #f0fdfa; --color-indigo-100: #ccfbf1; --color-indigo-400: #2dd4bf;
+  --color-indigo-500: #14b8a6; --color-indigo-600: #0f766e; --color-indigo-700: #115e59;
+  --color-violet-500: #0891b2; --color-violet-600: #0e7490; --color-fuchsia-600: #047857;
+}
